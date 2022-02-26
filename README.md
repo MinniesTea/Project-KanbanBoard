@@ -1,7 +1,7 @@
 # Project-KanbanBoard
 A collaborative full stack project that uses HTML/CSS, Bootstrap, Firebase, and Angular to create a Kanban board.
 
-**project Plan**
+**Project Plan**
 * Write down some layout ideas.
 * get started writing HTML/CSS.
 * Add funcationality and connect HTML pages.
