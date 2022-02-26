@@ -3,7 +3,7 @@ A collaborative full stack project that uses HTML/CSS, Bootstrap, Firebase, and 
 
 **Project Plan**
 * Write down some layout ideas.
-* get started writing HTML/CSS.
+* Get started writing HTML/CSS.
 * Add funcationality and connect HTML pages.
 * Add in Angular.
 * Connect to Firebase and connect it all up.
