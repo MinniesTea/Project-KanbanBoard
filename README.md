@@ -16,4 +16,5 @@ A collaborative full stack project that uses HTML/CSS, Bootstrap, Firebase, and 
 * 22/02/22 - Started to add some CSS.
 * 25/02/22 - Cleaned HTML/CSS code and wrote comments to make it easier to understand.
 * 26/02/22 - Finished basic template for the Kanban Board and gave everything the appropriate <> naming.
+* 27/02/22 - Added in some hover effects over the buttons and added a new model popup feature.
 
