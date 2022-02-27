@@ -24,7 +24,7 @@
     float: left;
 }
 
-.dropbtn {
+.dropdownMenuButton {
     background-color: black;
     color: white;
     padding: 32px;
@@ -59,7 +59,7 @@
 
 .dropdown:hover .dropdown-content {display:block}
 
-.dropdown:hover .dropbtn {background-color: #8f63f5;}
+.dropdown:hover .dropdownMenuButton {background-color: #8f63f5;}
 
 /* -----------------------------------Main Section Background Colour----------------------------------- */
 
@@ -67,14 +67,6 @@
     background: linear-gradient(107deg, rgba(28,16,65,1) 0%, rgba(184,61,92,1) 59%, rgba(60,20,77,1) 96%);
     padding: 28px;
 }
-
-/*.background{*/
-/*    background-image: url("img/Geometric Pattern Vector.svg");*/
-/*    background-repeat: no-repeat;*/
-/*    background-attachment: fixed;*/
-/*    background-position: center;*/
-
-/*}*/
 
 /* -----------------------------------Index Page Main Section----------------------------------- */
 
@@ -123,6 +115,7 @@
 }
 
 /* -----------------------------------Kanban Board Main Section----------------------------------- */
+
 /* Title Element */
 .kanbanBoardTitle{
     font-size: 42px;
@@ -130,6 +123,187 @@
     font-family: "Times New Roman";
     text-align: center;
     text-decoration: underline;
+}
+
+/* Modal Pop Up */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+}
+
+.modalContent {
+    background-color: #5692a2;
+    margin: 12% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #980101;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* model Content*/
+.createNewTaskPopUpBox {
+    display: none;
+    background: #3b4c98;
+    width: 40%;
+    flex-direction: column;
+    padding: 0.6rem;
+    min-width: 14rem;
+    min-height: 4.5rem;
+    border-radius: 0.3rem;
+}
+
+.formRow {
+    display: flex;
+    flex-direction: row;
+    margin: 0.2rem;
+}
+
+.formRowLabel {
+    width: 15%;
+    padding: 0.2rem;
+    padding-right: 0.5rem;
+    border: 0.1rem solid black;
+    border-right: 0;
+    border-radius: 0.2rem 0rem 0rem 0.2rem;
+    color: black;
+    font-weight: bold;
+}
+
+.formRowInput {
+    border: 0.1rem solid black;
+    border-radius: 0rem 0.2rem 0.2rem 0rem;
+    width: 85%;
+    color: black;
+}
+
+textarea {
+    resize: none;
+}
+
+.formActionButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 0.2rem;
+}
+
+.saveTaskButton {
+    border: none;
+    padding: 3px 15px 3px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.saveTaskButton:hover {
+    background-color: rgb(199, 199, 199);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Card Elements */
+.createANewTaskLocation{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.createANewTask{
+    border: none;
+    padding: 8px 20px 8px;
+    text-align: center;
+    font-size: 26px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.createANewTask:hover{
+    background-color: rgb(199, 199, 199);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container {
+    width: 70%;
+    min-width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 22px;
+    padding-bottom: 50px;
+}
+
+.kanbanBoard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.blockHeaders {
+    font-size: 28px;
+    color: black;
+    padding: 3px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.kanbanBlock {
+    padding: 0.6rem;
+    width: 30.5%;
+    min-width: 14rem;
+    min-height: 4.5rem;
+    border-radius: 0.3rem;
+}
+
+#todo {
+    background-color: #8f3e3e;
+}
+
+#inProgress {
+    background-color: #a68960;
+}
+
+#completed {
+    background-color: #577c57;
+}
+
+.task {
+    background-color: white;
+    margin: 0.2rem 0rem 0.3rem 0rem;
+    border: 0.1rem solid black;
+    border-radius: 0.2rem;
+    padding: 0.5rem 0.2rem 0.5rem 2rem;
+}
+.taskHeader {
+    color: black;
+    text-align: left;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.taskDescription{
+    color: black;
+    text-align: left;
+    font-size: 14px;
 }
 
 
@@ -152,17 +326,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
 /* Start Over Button Element */
-
 .startOverButtonLocation{
     text-align: center;
 }

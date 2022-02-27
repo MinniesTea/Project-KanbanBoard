@@ -23,7 +23,7 @@
         </div>
         <div class="dropdownMenuLocation">
             <div class="dropdown">
-                <button class="dropbtn"><i class="bi bi-list"></i> Menu</button>
+                <button class="dropdownMenuButton"><i class="bi bi-list"></i> Menu</button>
                 <div class="dropdown-content">
                     <a href="index.html">Home</a>
                     <a href="aboutPage.html">About</a>
@@ -33,25 +33,161 @@
     </div>
 </header>
 
-
-
 <!-- ======= Infinite Background Image ======= -->
 <main>
     <section id="backgroundImage" class="background">
+        <!-- Kanban Board Title -->
         <div class="kanbanBoardTitle">
-            <p>Time to get started!</p>
+            <p>Kanban Board Placeholder Name</p>
         </div>
-        <!-- ======= Kanban Board Screen ======= -->
 
-        <!-- ======= TEMP PLACEHOLDER ======= -->
-        <figure class="imageSize">
-            <img src="img/Kanban Board Example.jpg" alt="Example Kanban Board" width="1000" height="480">
-            <div class="imageCaptions">
-                <figcaption>Example Kanban Screen</figcaption>
+        <!-- Trigger/Open The Modal -->
+        <div class="createANewTaskLocation">
+            <button id="myBtn" class="createANewTask" >Create new task</button>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modalContent">
+                <!-- Close Button -->
+                <span class="close bi bi-x-circle-fill" style="float:right;"> Close</span>
+                <div id="createNewTaskPopUpBox">
+                    <p class="blockHeaders">Create New Task</p>
+                    <span class="formRow">
+                        <label class="formRowLabel" for="task-name">Name:</label>
+                        <input class="formRowInput" type="text" name="task-name" id="task-name">
+                    </span>
+                    <span class="formRow">
+                        <label class="formRowLabel" for="task-name">Description:</label>
+                        <textarea class="formRowInput" name="task-description" id="task-description" cols="70" rows="10"></textarea>
+                    </span>
+                    <span class="formRow">
+                        <label class="formRowLabel" for="task-name">Status:</label>
+                        <select class="formRowInput" name="task-status" id="task-status">
+                            <option value="toDo">To Do</option>
+                            <option value="inProgress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </span>
+                    <span class="formActionButtons">
+                        <button id="saveButton" class="bi bi-save saveTaskButton" onclick="saveTask()"> Save Task</button>
+                    </span>
+                </div>
             </div>
-        </figure>
+        </div>
 
-        <!--TODO: Create Kanban Board. To Do, In Progress and Completed Boxes-->
+        <div class="container">
+            <!-- Kanban Board Cards -->
+            <div class="kanbanBoard">
+                <!-- Drag and Drop Cards -->
+                <div class="kanbanBlock" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <p class="blockHeaders">To Do:</p>
+
+                    <!-- ======= Example Task Inserted Manually ======= -->
+                    <div class="task" id="taskExample" draggable="true" ondragstart="drag(event)">
+                        <p class="taskHeader">Example Task</p>
+                        <p class="taskDescription">Every task needs a description and in this case I am using this as my example to see how it looks.</p>
+                    </div>
+
+                    <div class="task" id="taskExample2" draggable="true" ondragstart="drag(event)">
+                        <p class="taskHeader">Example Task</p>
+                        <p class="taskDescription">Every task needs a description and in this case I am using this as my example to see how it looks.</p>
+                    </div>
+                    <div class="task" id="taskExample3" draggable="true" ondragstart="drag(event)">
+                        <p class="taskHeader">Example Task</p>
+                        <p class="taskDescription">Every task needs a description and in this case I am using this as my example to see how it looks.</p>
+                    </div>
+                    <div class="task" id="taskExample4" draggable="true" ondragstart="drag(event)">
+                        <p class="taskHeader">Example Task</p>
+                        <p class="taskDescription">Every task needs a description and in this case I am using this as my example to see how it looks.</p>
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="kanbanBlock" id="inProgress" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <p class="blockHeaders">In Progress:</p>
+                </div>
+
+                <div class="kanbanBlock" id="completed" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <p class="blockHeaders">Completed:</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- ======= Java Script Functionality ======= -->
+        <script>
+            //--------------- Model Functionality ----------------------------
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on the button, open the modal
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            //--------------- Drag and Drop Card Functionality ----------------------------
+
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
+
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+            }
+            //--------------- CRUD Functionality ----------------------------
+            // function createTask(){
+            //     var x = document.getElementById("inProgress");
+            //     var y = document.getElementById("completed");
+            //     var z = document.getElementById("createNewTaskPopUpBox");
+            //     if (x.style.display === "none") {
+            //         x.style.display = "block";
+            //         y.style.display = "block";
+            //         z.style.display = "none";
+            //     } else {
+            //         x.style.display = "none";
+            //         y.style.display = "none";
+            //         z.style.display = "flex";
+            //     }
+            // }
+            // function saveTask() {
+            //     var saveButton = document.getElementById("saveButton");
+            //     if (saveButton.style.display === "none") {
+            //         saveButton.style.display = "block";
+            //     } else {
+            //         saveButton.style.display = "none";
+            //     }
+            // }
+        </script>
 
 
 
