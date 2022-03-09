@@ -1,6 +1,9 @@
 # Project-KanbanBoard
 A collaborative full stack project that uses HTML/CSS, Bootstrap, Firebase, and Angular to create a Kanban board.
 
+**Take a look at what it looks like so far!**
+* Progress: https://admiring-perlman-cf9c03.netlify.app/
+
 **Project Plan**
 * Write down some layout ideas.
 * Get started writing HTML/CSS.
